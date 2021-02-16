@@ -7,15 +7,17 @@ const tuesdayOutput = document.getElementById("tuesday")
  * @param {string} sentence
  */
 function getLongestWord(sentence) {
+   
    let longestWord = ""
-
+   
    sentence.split(" ").forEach(word => {
-      if(word.length > longestWord.length) {
-         longestWord = word
-      }
+      if(word.length > longestWord.length) longestWord = word
    })
-
+   
    return longestWord
+   
+   // Alternate solution in-place of all 5 lines of my function solution:
+   //    return sentence.split(' ').sort((a,b) => b.length - a.length)
 }
 
 tuesdayOutput.innerHTML +="<p>" + helloWorld + "</p>"
