@@ -11,18 +11,24 @@ let tests = [
 
 function checkPalindrome(str) {
    str = str.split(' ').join('').toLowerCase()
-   const maxLen = str.length/2
-   // console.log('checkPalindrome():', str);
-   for(let i = 0; i < maxLen; i++) {
-      const j = str.length - 1 - i
-      //console.log(str[i], ':', str[j]);
-      if( str[ i ] != str[ j ] ) { 
-         console.log(str[i], '!=', str[j]);
-         return false
-      }
-   }
-   // console.log(str, 'is a palindrome!');
-   return true
+
+   // const maxLen = str.length/2
+   // for(let i = 0; i < maxLen; i++) {
+   //    const j = str.length - 1 - i
+   //    if( str[ i ] != str[ j ] ) { 
+   //       console.log(str[i], '!=', str[j]);
+   //       return false
+   //    }
+   // }
+   // return true
+
+
+
+   // return str.split('').reverse().join('') == str ? true : false
+
+
+
+   return str.split('').every( ( l, i ) => l === str[ str.length - 1 - i ] )
 }
 
 let result = '<h2>Is a string a palindrome?</h2>'
